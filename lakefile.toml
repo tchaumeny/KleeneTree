@@ -1,7 +1,7 @@
-name = "kleene"
+name = "kleenetree"
 version = "0.1.0"
 keywords = ["math"]
-defaultTargets = ["Kleene"]
+defaultTargets = ["KleeneTree"]
 
 [leanOptions]
 pp.unicode.fun = true # pretty-prints `fun a ↦ b`
@@ -15,4 +15,4 @@ scope = "leanprover-community"
 rev = "v4.26.0-rc2"
 
 [[lean_lib]]
-name = "Kleene"
+name = "KleeneTree"
