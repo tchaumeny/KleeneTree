@@ -22,6 +22,14 @@ theorem kleene_tree_computable : ComputablePred kleeneTree.nodes
 theorem kleene_tree_infinite : kleeneTree.nodes.Infinite
 ```
 
+##### Kleene tree has a path
+
+This follows from weak Kőnig's lemma.
+
+```lean
+theorem kleene_tree_has_path : ∃ p : Path, ∀ n : ℕ, p.get_node n ∈ kleeneTree.nodes
+```
+
 ##### Kleene tree does not have a computable path
 
 Any path (e.g., as given by weak Kőnig's lemma) must be non-computable.
