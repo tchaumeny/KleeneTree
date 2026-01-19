@@ -1,8 +1,8 @@
 # Kleene tree: an infinite tree with no computable path
 
-This project formalizes the Kleene tree in [Lean](https://lean-lang.org/), following (not strictly) a paper by Andrej Bauer (see *references*).
+This project formalizes Kleene tree in [Lean](https://lean-lang.org/), following (not strictly) a paper by Andrej Bauer (see *references*).
 
-The Kleene tree is a (binary) tree which is computable, infinite and does not have a computable (infinite) path.
+Kleene tree is a (binary) tree which is computable, infinite and does not have a computable (infinite) path.
 
 Kleene tree is a recurring construction in computability theory and reverse mathematics, as it shows the non-computable aspect of the (weak) Kőnig's lemma (see e.g. Stillwell's book).
 
@@ -20,6 +20,14 @@ theorem kleene_tree_computable : ComputablePred kleeneTree.nodes
 
 ```lean
 theorem kleene_tree_infinite : kleeneTree.nodes.Infinite
+```
+
+##### Kleene tree has a path
+
+This follows from weak Kőnig's lemma.
+
+```lean
+theorem kleene_tree_has_path : ∃ p : Path, ∀ n : ℕ, p.get_node n ∈ kleeneTree.nodes
 ```
 
 ##### Kleene tree does not have a computable path

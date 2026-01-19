@@ -1,4 +1,4 @@
-name = "kleenetree"
+name = "KleeneTree"
 version = "0.1.0"
 keywords = ["math"]
 defaultTargets = ["KleeneTree"]
@@ -12,7 +12,7 @@ maxSynthPendingDepth = 3
 [[require]]
 name = "mathlib"
 scope = "leanprover-community"
-rev = "v4.26.0-rc2"
+rev = "v4.26.0"
 
 [[lean_lib]]
 name = "KleeneTree"
