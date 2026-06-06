@@ -91,7 +91,7 @@ lemma bounded_separator_stable (p : Path) (h : m ≤ n) :
   intro hn
   let ⟨t, ht⟩ := Path.get_node_suffix (p := p) m (n - m)
   rw [Nat.add_sub_of_le h] at ht
-  rw [congrArg (bounded_separator k) ht] at hn
+  rw [ht] at hn
   exact bounded_separator_suffix t hn
 
 def kleeneTree : BinaryTree where
@@ -175,7 +175,6 @@ theorem kleene_tree_infinite : kleeneTree.nodes.Infinite := by
     unfold kleeneTree
     simp only [Set.mem_setOf_eq, node_builder_length, node_builder_separator]
   have hinj : Function.Injective fun n => bounded_node_builder n n := by
-    unfold Function.Injective
     intro a₁ a₂ heq
     dsimp at heq
     grind only [!node_builder_length]
